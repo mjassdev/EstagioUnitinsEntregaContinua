@@ -1,0 +1,240 @@
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
+% mestrado e trabalhos monograficos em geral) em conformidade com 
+% ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
+% Apresentacao
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+
+%Testando o git
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em verso e anverso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	brazil				% o último idioma é o principal do documento
+	]{abntex2}
+
+% ---
+% Pacotes básicos 
+% ---
+\usepackage{unitins}
+% \usepackage{lmodern}			% Usa a fonte Latin Modern			
+% \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{subfig}
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{soul}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{spreadtab}
+\usepackage{multirow}
+\usepackage{amsthm}
+\usepackage{url}
+% \usepackage[portuguese, ruled, linesnumbered]{algorithm2e}
+
+
+% ---
+		
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+		% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+
+%\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf,abnt-etal-list=2 ]{abntex2cite}	% Citações padrão ABNT
+
+
+\usepackage[table]{xcolor}
+\definecolor{lightgray}{gray}{0.9}
+\graphicspath{{imagens/}}
+
+\theoremstyle{theorem}
+\newtheorem{teo}{Teorema}[chapter]
+\newtheorem{lema}[teo]{Lema}
+\theoremstyle{definition}
+\newtheorem{defi}[teo]{Definição}
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+%\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+%\renewcommand{\backref}{}
+% Define os textos da citação
+%\renewcommand*{\backrefalt}[4]{
+%	\ifcase #1 %
+%		Nenhuma citação no texto.%
+%	\or
+%		Citado na página #2.%
+%	\else
+%		Citado #1 vezes nas páginas #2.%
+%	\fi}%
+% ---
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{PROPOSTA DE UM MODELO DE IMPLANTAÇÃO PARA APLICAÇÃO EXTERNA UTILIZANDO CONCEITOS DEVOPS}
+\autor{MATHEUS JOSÉ ALVES SILVA SANTOS}
+\local{Palmas}
+\data{2018}
+\orientador{Prof. Me. Douglas Chagas da Silva}
+\instituicao{%
+  Universidade Estadual do Tocantins
+  \par
+  Curso de Sistemas de Informação
+  }
+\tipotrabalho{Trabalho de Conclusão de Curso (Graduação)}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Projeto apresentado como requisito para aprovação na disciplina de Estágio Supervisionado do Curso de Sistemas de Informações da Universidade Estadual do Tocantins- UNITINS, sob a orientação do professor Me. Douglas Chagas da Silva.}
+
+% ---
+
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={Algoritmo}{trabalho acadêmico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+% ----------------------------------------------------------
+
+\include{pre_textuais}
+
+% ELEMENTOS TEXTUAIS
+% ---------------------------------[!htb]-------------------------
+%\textual
+
+%Capitulos
+\include{c_introducao}
+\include{c_referencial}
+\include{c_metodologia}
+\include{c_resultados}
+\include{c_conclusao}
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{bibliografia}
+.\\
+SATO, Danilo. DEVOPS Na Prática: Entrega de Software Confiável e Automatizada. São Paulo: Casa do Código, 2016.
+\\ \\ 
+MATTHIAS, Karl e KANE, Sean. Primeiros Passos com Docker: Usando Contêineres em Produção. São Paulo: Novatec, 2015.
+\\ \\
+IBM. O que é DEVOPS? 2013. Disponível em: $<$https://www.ibm.com/developerworks/\\ community/blogs/rationalbrasil/entry/o\_que\_devops?lang=en$>$. Acesso em: 12 fev 2018.
+\\ \\
+GARTNER, Group. Glossário de Ti: DEVOPS. Disponível em:
+$<$https://www.gartner.com/ \\it-glossary/devops$>$. Acesso em: 13 fev 2018.
+\\ \\
+GARTNER, Group. Newsroom: Gartner Says By 2016, DevOps Will Evolve From a Niche to a Mainstream Strategy Employed by 25 Percent of Global 2000 Organizations. Disponível em: $<$https://www.gartner.com/newsroom/id/2999017$>$. Acesso em 13 fev 2018.
+\\ \\
+GAEA. 4 Motivos para Usar a Cultura DevOps.Disponível em: $<$https://gaea.com.br/4-motivos-para-usar-a-cultura-devops/\#$>$. Acesso em: 13 fev 2018.
+\\ \\ 
+COSTA, Bruna Lima. DevOps, quem usa? como adotar? o que usar?. Disponível em: $<$https://www.primeinf.com.br/devops-quem-usa-como-adotar-o-que-usar/$>$. Acesso em 13 fev 2018
+\\ \\ 
+HASHIMOTO, Mitchell. Atlas. Disponível em: $<$https://www.hashicorp.com/blog/atlas-announcement$>$. Acesso em 14 fev 2018.
+\\ \\
+DIEDRICH, Cristiano. O que é Docker? Disponível em: $<$https://www.mundodocker.com.br/o-que-e-docker/$>$. Acesso em 14 fev 2018.
+\\ \\
+COSTA, Marcelo. Ansible: uma nova opção para gerenciamento de configuração. Disponível em: $<$https://www.infoq.com/br/news/2013/04/ansible1.1$>$. Acesso em 14 fev 2018.
+\\ \\
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+\phantompart
+\printindex
+%---------------------------------------------------------------------
+
+\end{document}
+\grid

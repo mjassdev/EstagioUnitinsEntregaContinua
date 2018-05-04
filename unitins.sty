@@ -1,0 +1,91 @@
+%%
+%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) para a Universidade XXXX
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is SEU_NOME, SEU_EMAIL
+%%
+%% Further information about abnTeX2 are available on https://github.com/abntex/abntex2
+%%
+
+% ---
+% INICIO DAS CUSTOMIZACOES PARA A UNIVERSIDADE ESTADUAL DO TOCANTINS
+% ---
+
+\ProvidesPackage{unitins}[2017/15/10 Criacao desta customizacao do abnTeX2]
+
+% alterando a capa
+\renewcommand{\imprimircapa}{%
+  \begin{capa}%
+    
+    \center
+    \includegraphics[width=1\textwidth]{imagens/unitins.png}
+    \ABNTEXchapterfont\Large   CURSO DE SISTEMAS DE INFORMA{\c{C}}{\~{A}}O 
+    \par
+	\vspace*{2cm}     
+    {\ABNTEXchapterfont\bfseries\large \expandafter\MakeUppercase{\imprimirtitulo}  \vspace*{2cm}    }
+    \par
+    {\large \expandafter\MakeUppercase{\imprimirautor}}
+    \vspace*{\fill}
+    
+    
+   {\large\imprimirlocal}
+   
+   \par
+   
+   {\large\imprimirdata}
+   \vspace*{1cm}
+    
+  
+  \end{capa}
+}
+
+% folha de rosto 
+
+\makeatletter
+
+\renewcommand{\folhaderostocontent}{
+  \begin{center}
+  	    \includegraphics[width=1\textwidth]{imagens/unitins.png}
+  	    \ABNTEXchapterfont\Large   CURSO DE SISTEMAS DE INFORMA{\c{C}}{\~{A}}O
+  	    
+     \par
+     \vspace*{1cm}     
+     {\ABNTEXchapterfont\bfseries\large \expandafter\MakeUppercase{\imprimirtitulo}  \vspace*{2cm}    }
+     \par
+     {\large \expandafter\MakeUppercase{\imprimirautor}}
+     %\vspace*{\fill}
+     \par
+          \vspace*{1cm}     
+  	\hspace{.45\textwidth}
+  	\begin{minipage}{.5\textwidth}
+  	    \small\imprimirpreambulo
+  	    
+  	\end{minipage}%
+  	\vspace*{\fill}
+    \end{center}
+      
+  \begin{center}
+  	\vspace*{0.5cm}
+  	{\large\imprimirlocal}
+  	\par
+  	{\large\imprimirdata}
+  	\vspace*{1cm}
+  \end{center}
+}
+
+\makeatother
+
+
+
+% ---
+% FIM DAS CUSTOMIZACOES PARA A UNIVERSIDADE XXX
+% ---
