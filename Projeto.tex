@@ -48,6 +48,9 @@
 \usepackage{multirow}
 \usepackage{amsthm}
 \usepackage{url}
+\usepackage{float} 
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
 % \usepackage[portuguese, ruled, linesnumbered]{algorithm2e}
 
 
@@ -90,12 +93,12 @@
 % Define os textos da citação
 %\renewcommand*{\backrefalt}[4]{
 %	\ifcase #1 %
-%		Nenhuma citação no texto.%
-%	\or
-%		Citado na página #2.%
+	%	Nenhuma citação no texto.%
+	%\or
+	%	Citado na página #2.%
 %	\else
-%		Citado #1 vezes nas páginas #2.%
-%	\fi}%
+	%	Citado #1 vezes nas páginas #2.%
+	%\fi}%
 % ---
 
 % ---
@@ -158,6 +161,7 @@
 % compila o indice
 % ---
 \makeindex
+
 % ---
 
 % ----
@@ -171,17 +175,24 @@
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
 % ----------------------------------------------------------
-% \pretextual
+%\pretextual
 % ----------------------------------------------------------
 
 \include{pre_textuais}
 
 % ELEMENTOS TEXTUAIS
 % ---------------------------------[!htb]-------------------------
-%\textual
-
+\textual
+%\rhead{\thepage}
+%\pagestyle{plain}
+\pagestyle{headings}
+ %\pagenumbering{arabic}
 %Capitulos
-\include{c_introducao}
+
+
+
+
+\include{c_introducao}	
 \include{c_referencial}
 \include{c_metodologia}
 \include{c_resultados}
@@ -198,39 +209,7 @@
 % Referências bibliográficas
 % ----------------------------------------------------------
 \bibliography{bibliografia}
-.\\
-SATO, Danilo. DEVOPS Na Prática: Entrega de Software Confiável e Automatizada. São Paulo: Casa do Código, 2016.
-\\ \\ 
-MATTHIAS, Karl e KANE, Sean. Primeiros Passos com Docker: Usando Contêineres em Produção. São Paulo: Novatec, 2015.
-\\ \\
-IBM. O que é DEVOPS? 2013. Disponível em: $<$https://www.ibm.com/developerworks/\\ community/blogs/rationalbrasil/entry/o\_que\_devops?lang=en$>$. Acesso em: 12 fev 2018.
-\\ \\
-GARTNER, Group. Glossário de Ti: DEVOPS. Disponível em:
-$<$https://www.gartner.com/ \\it-glossary/devops$>$. Acesso em: 13 fev 2018.
-\\ \\
-GARTNER, Group. Newsroom: Gartner Says By 2016, DevOps Will Evolve From a Niche to a Mainstream Strategy Employed by 25 Percent of Global 2000 Organizations. Disponível em: $<$https://www.gartner.com/newsroom/id/2999017$>$. Acesso em 13 fev 2018.
-\\ \\
-GAEA. 4 Motivos para Usar a Cultura DevOps.Disponível em: $<$https://gaea.com.br/4-motivos-para-usar-a-cultura-devops/\#$>$. Acesso em: 13 fev 2018.
-\\ \\ 
-COSTA, Bruna Lima. DevOps, quem usa? como adotar? o que usar?. Disponível em: $<$https://www.primeinf.com.br/devops-quem-usa-como-adotar-o-que-usar/$>$. Acesso em 13 fev 2018
-\\ \\ 
-HASHIMOTO, Mitchell. Atlas. Disponível em: $<$https://www.hashicorp.com/blog/atlas-announcement$>$. Acesso em 14 fev 2018.
-\\ \\
-DIEDRICH, Cristiano. O que é Docker? Disponível em: $<$https://www.mundodocker.com.br/o-que-e-docker/$>$. Acesso em 14 fev 2018.
-\\ \\
-COSTA, Marcelo. Ansible: uma nova opção para gerenciamento de configuração. Disponível em: $<$https://www.infoq.com/br/news/2013/04/ansible1.1$>$. Acesso em 14 fev 2018.
-\\ \\
 
-% ----------------------------------------------------------
-% Glossário
-% ----------------------------------------------------------
-%
-% Consulte o manual da classe abntex2 para orientações sobre o glossário.
-%
-%\glossary
-
-%---------------------------------------------------------------------
-% INDICE REMISSIVO
 %---------------------------------------------------------------------
 \phantompart
 \printindex
@@ -238,3 +217,4 @@ COSTA, Marcelo. Ansible: uma nova opção para gerenciamento de configuração. 
 
 \end{document}
 \grid
+

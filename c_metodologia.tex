@@ -7,37 +7,37 @@
 
 \chapter{Metodologia}\label{cap:metodologia}
 
+No âmbito desse estudo, é proposta uma arquitetura para implantação de hospedagem de aplicações externas. Assim, o levantamento de informações consistiu em levantar um conjunto de requisitos essenciais para apoiar o modelo apresentado.
 
-Para o desenvolvimento deste trabalho, com foco em atendimento aos seus objetivos, far-se-á uso de softwares open source  $($código livre$)$, que possibilitam a utilização gratuita dos mesmos, tendo suporte contínuo da comunidade, além de permitir alterações em sua estrutura, acaso sejam necessárias e relevantes.
+Para a eleição das ferramentas escolhidas foi levando em conta, a sua disponibilização de código open source, a flexibilidade no uso e confiabilidade nos resultados, as suas vantagens e desvantagens, a aceitação junto a comunidade científica e a documentação disponível, seja por meio de livros ou artigos publicados ou por contribuições junto a comunidade web.
 
-No âmbito desse estudo, será construído um cenário hipotético a fim de realização dos testes referentes à deploys.
+O processo de eleição das ferramentas teve como ponto inicial estar em consonância com atuabilidade do mercado de TI e ter continua contribuição da comunidade web. Sendo assim, o primeiro critério a ser levado em conta foi como a ferramenta daria suporte às diversas linguagens de programações disponíveis. Outro fator relevante está atrelado a maneira de como o produto pode ser adquirido, mais diretamente ao custo necessário para fazer uso da ferramenta, a premissa é que as mesmas teriam versão open source (gratuita) que  dessem suporte às necessidades da arquitetura proposta.
 
-
-
-\subsection{Ferramentas Utilizadas}
-Para concepção desse trabalho serão adotadas as seguintes ferramentas:
+Dessa forma, alguns requisitos foram considerados na escolha, os pontos citados a seguir nortearam o estudo: 
 
 \begin{itemize}
 	
-\item Virutalbox: Criação de máquinas virtuais para testes;
-
-\item GitHub: Versionamento e repositório;
-
-\item Ansible: Gerenciador de configuração;
-
-\item Jenkins: Automatização da execução de tarefas.
-
+	\item Extensibilidade: tomando como fato as rápidas mudanças no cenário tecnológico, a ferramenta deveria poder dar suporte a diferentes linguagens e integrações;
+	\item Usabilidade: a ferramenta deveria ser de fácil compreensão e fornecer uma boa experiência ao usuário;
+	\item Segurança: é essencial que critérios de segurança sejam inerentes à ferramenta, definição de papéis e usuários.
+	
 \end{itemize}
 
 
-% \section{Materiais}
+\section{Ferramentas Utilizadas}
 
+Tomando por base os critérios mencionados no item 3, passou-se a definição das ferramentas, são elas:
 
+\begin{itemize}
+	
+\item VirutalBox: Criação de máquinas virtuais para testes. Serão construídas máquinas virtuais para execução dos hosts clientes e servidores;
+\item GitHub: Versionamento e repositório. Esse serviço receberá os códigos das aplicações dos desenvolvedores;
+\item Ansible: Gerenciamento de configuração e orquestração da rotina. Essa ferramenta será responsável por administrar as rotinas dentro de todo o processo de deploy. Será executado em uma máquina virtual com Sistema Operacional Ubuntu Linux 64 bits.
+\item Jenkins: Automatização da execução de tarefas e testes de implantação. O Jenkins será executado em uma máquina virtual com Sistema Operacional Ubuntu Linux 64 bits.
+\item Docker: Contêineres para armazenamento das aplicações e testes. O Docker será executado em uma máquina virtual com Sistema Operacional Ubuntu Linux 64 bits.
 
+\end{itemize}
 
-
-
-% \section{Implementação dos métodos}
 
 
 
